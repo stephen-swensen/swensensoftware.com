@@ -4,8 +4,28 @@
     <title>
         Stephen Swensen's Blog at Swensen Software
     </title>
+    <style>
+        code {
+            background-color: #eef;
+        }
+    </style>
 </head>
 <body>
+    <article>
+        <h2>x11 forwarding (linux guest, windows host)</h2>
+        <p>
+            I'm playing with sdl2 and rust. In my setup, I ssh from Bash for Windows (WSL) into Ubuntu Server running inside Virtual Box. In order to run my sdl2 app over my ssh connection, I needed to: 
+            <ul>
+                <li>Install xorg in the guest: <code>sudo apt install xorg</code></li>
+                <li>Install Xming on Windows</li>
+                <li>Set the DISPLAY variable in my WSL host session: <code>export DISPLAY=localhost:0.0</code></li>
+                <li>Use the -X flag in my ssh command</li>
+            </uL>
+        </p>
+        <p>
+            <i>Published on 2019-01-03 by Stephen Swensen</i>
+        </p>
+    </article>
     <article>
         <h2>Theme for 2018</h2>
         <p>
@@ -34,6 +54,9 @@
         </p>
         <p>
             <i>Published on 2018-12-30 by Stephen Swensen</i>
+        </p>
+        <p>
+            <i>Update (2019-01-03): I wasn't able to get this to work perfectly. Namely, existing from the netrw buffer had some problems.</i>
         </p>
     </article>
 </body>
